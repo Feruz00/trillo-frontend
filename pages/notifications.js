@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { Triangle } from 'react-loader-spinner';
@@ -14,7 +14,7 @@ import { AuthContext } from '../context/authContext';
 import Alert from '../components/Alert';
 import calculateTime from '../calculateTime';
 
-const Home = ({ notifications, errorLoading }) => {
+const Home = ({ notifications }) => {
   const { t } = useTranslation('');
   const { setUser } = useContext(AuthContext);
   const [hasMore, setHasMore] = useState(notifications.notifications.length >= 10);

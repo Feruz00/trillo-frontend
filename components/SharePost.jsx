@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-plusplus */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -12,7 +13,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/authContext';
 import { useConversation } from '../context/conversation';
 
-const SharePost = ({ t, shareText, setShareText, postId, setShare }) => {
+const SharePost = ({ shareText, setShareText, postId, setShare }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(null);

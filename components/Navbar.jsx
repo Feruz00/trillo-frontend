@@ -4,11 +4,11 @@ import { useState, useEffect, useContext, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
-import { FaSun, FaMoon, FaTelegramPlane, FaLanguage } from 'react-icons/fa';
+import { FaSun, FaMoon, FaTelegramPlane } from 'react-icons/fa';
 import { useTranslation } from 'next-i18next';
 
 import { MdNotifications, MdOutlineLanguage } from 'react-icons/md';
-import { CloseOutlined, FileWordOutlined, HomeOutlined, LogoutOutlined, MenuOutlined, PlusCircleOutlined, SearchOutlined, UserOutlined } from '@ant-design/icons';
+import { CloseOutlined, HomeOutlined, LogoutOutlined, MenuOutlined, PlusCircleOutlined, UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 
 import images from '../public/logo.png';
@@ -73,10 +73,7 @@ const MenuItems = ({ isMobile, active, setActive, user, t, count }) => {
       {menus.map((item, i) => (
         <li
           key={i}
-          onClick={() => 
-            setActive(item.title)
-          
-            }
+          onClick={() => setActive(item.title)}
           className={`flex flex-row items-center relative font-semibold text-base
           dark:hover:text-white hover:text-nft-dark mx-3 
             ${active === item.title
@@ -97,7 +94,8 @@ const MenuItems = ({ isMobile, active, setActive, user, t, count }) => {
                       <Icon title={item.title} className="text-xl cursor-pointer" />
                       {
                         item.title === 'inbox'
-                          ? count > 0 && (
+                          ? count > 0
+                          && (
                           <div
                             className="absolute text-xs -top-2 -right-2
                             z-10 bg-[#c00] px-[5px] h-4 text-white rounded-full"
@@ -105,20 +103,19 @@ const MenuItems = ({ isMobile, active, setActive, user, t, count }) => {
                             {count}
                           </div>
                           )
-                          : item.title === 'notifications' ? user.unreadNotifications
-  && (
-  <div
-    className="absolute text-xs top-0 -right-[2px]
+                          : item.title === 'notifications'
+                            ? user.unreadNotifications && (
+                            <div className="absolute text-xs top-0 -right-[2px]
                             z-10 bg-[#c00]  h-[6px] w-[6px] text-white rounded-full"
-  />
-  )
-                            : item.title === 'home' && user.unreadPosts &&(
+                            />
+                            )
+                            : item.title === 'home' && user.unreadPosts && (
                               <div
                                 className="absolute text-xs top-1 -right-[2px]
                             z-10 bg-[#c00]  h-[6px] w-[6px] text-white rounded-full"
-                              />,
+                              />
                             )
-              }
+                    }
                     </>
                   )
 }
@@ -132,7 +129,7 @@ const MenuItems = ({ isMobile, active, setActive, user, t, count }) => {
 
 const Navbar = () => {
   const { user, setUser } = useContext(AuthContext);
-  const { count, answerCall, call, callAccepted } = useConversation();
+  const { count } = useConversation();
 
   const { theme, setTheme } = useTheme();
   const router = useRouter();
@@ -146,18 +143,19 @@ const Navbar = () => {
   const { t } = useTranslation('');
   // console.log(user);.
 
-  useEffect(()=>{
-    setIsOpen(false)
+  useEffect(() => {
+    setIsOpen(false);
     // if(router.pathname === '/') setActive('home')
     // if(router.pathname === '/direct') setActive('inbox')
     // if(router.pathname === '/new-post') setActive('newPost')
-    
+
     // console.log(router.pathname);
-  },[router])
+  }, [router]);
 
   return (
-    <nav className="flexBetween w-full fixed z-10 p-4 flex-row border-b dark:bg-nft-dark bg-white 
-    dark:border-nft-black-1 border-nft-gray-1">
+    <nav className="flexBetween w-full fixed z-10 p-4 flex-row border-b dark:bg-nft-dark bg-white
+    dark:border-nft-black-1 border-nft-gray-1"
+    >
 
       <div className="flex flex-1 md:flex-initial md:mr-4  flex-row justify-start">
         <Link href="/">
@@ -215,8 +213,8 @@ const Navbar = () => {
            transition-all duration-500 "
           onClick={() => setLang(!lang)}
         >
-        <MdOutlineLanguage className="text-xl md:text-sm mr-[2px]" />
-        <p className="uppercase md:text-xs">{activeLocale}</p>
+          <MdOutlineLanguage className="text-xl md:text-sm mr-[2px]" />
+          <p className="uppercase md:text-xs">{activeLocale}</p>
         </div>
         <div
           className={`absolute top-plus text-sm right-0 bg-white shadow dark:bg-nft-black-3  rounded overflow-hidden z-30
@@ -225,13 +223,13 @@ const Navbar = () => {
         >
           {
             otherLocales?.map((locale) => {
-              const { pathname, query, asPath } = router;
+              const { asPath } = router;
               return (
                 <div key={locale} className="hover:bg-nft-gray-1 dark:hover:bg-nft-black-2 px-1 text-center">
-                  <Link 
+                  <Link
                   // href={{ pathname, query }} asPath={asPath} locale={locale}
-                  href={asPath}
-                  locale={locale}
+                    href={asPath}
+                    locale={locale}
                   >
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a

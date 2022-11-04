@@ -1,4 +1,4 @@
-import { CheckSquareOutlined, CloseOutlined, LoadingOutlined, MenuOutlined, PlayCircleOutlined, PlusCircleOutlined, PlusSquareOutlined } from '@ant-design/icons';
+import { CloseOutlined, LoadingOutlined, MenuOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useConversation } from '../context/conversation';

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState, useEffect, useContext } from 'react';
 // import { Modal } from 'react-bootstrap';
 import { LoadingOutlined, UserAddOutlined, UserOutlined } from '@ant-design/icons';
@@ -36,7 +37,7 @@ const Input = ({ text, setText, placeholder, type }) => {
   );
 };
 
-const ChatInformationCenter = ({ t, isOpen }) => {
+const ChatInformationCenter = ({ t }) => {
   const { setCurrentConversation, currentConversation, setConversations, setChat } = useConversation();
   const [name, setName] = useState('');
   const [current, setCurrent] = useState('');
@@ -93,7 +94,7 @@ const ChatInformationCenter = ({ t, isOpen }) => {
           if (i._id !== currentConversation._id) return i;
 
           const { recipients, ...other } = i;
-          return { recipients: recipients.filter((t) => t._id !== current), ...other };
+          return { recipients: recipients.filter((k) => k._id !== current), ...other };
         }));
       }
     });
@@ -110,7 +111,7 @@ const ChatInformationCenter = ({ t, isOpen }) => {
 
           const { admins, ...other } = i;
           let k = [];
-          if (ans) k = admins.filter((t) => t !== current);
+          if (ans) k = admins.filter((fer) => fer !== current);
           else k = [...admins, current];
           return { admins: k, ...other };
         }));

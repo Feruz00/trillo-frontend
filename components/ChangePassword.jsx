@@ -50,12 +50,12 @@ const ChangePassword = ({ t }) => {
   });
   const confirmPassword = (s) => {
     let bo = false;
-    for (let i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i += 1) {
       if (s[i] >= '0' && s[i] <= '9') bo = true;
     }
     if (!bo) return false;
     bo = false;
-    for (let i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i += 1) {
       if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) bo = true;
     }
     if (!bo) return false;
@@ -126,7 +126,7 @@ const ChangePassword = ({ t }) => {
             </h2>
             <Input
               text={password.oldPassword}
-              setText={(t) => setPassword((prev) => ({ ...prev, oldPassword: t }))}
+              setText={(k) => setPassword((prev) => ({ ...prev, oldPassword: k }))}
               invalidText={password.oldPasswordInvalidText}
               placeholder={t('auth.password')}
               type="password"
@@ -138,7 +138,7 @@ const ChangePassword = ({ t }) => {
 
             <Input
               text={password.newPassword}
-              setText={(t) => setPassword((prev) => ({ ...prev, newPassword: t }))}
+              setText={(k) => setPassword((prev) => ({ ...prev, newPassword: k }))}
               invalidText={password.newPasswordInvalidText}
               placeholder={t('auth.password')}
               type="password"

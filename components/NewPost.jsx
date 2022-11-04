@@ -9,7 +9,7 @@ import { AuthContext } from '../context/authContext';
 import { useSocket } from '../context/socket';
 
 const Input = ({ Icon, text, setText, placeholder, invalidText, type, className }) => {
-  const [tp, setTp] = useState(type);
+  // const [tp, setTp] = useState();
   const [hover, setHover] = useState(false);
   return (
     <div className="flex flex-col w-full">
@@ -21,7 +21,7 @@ const Input = ({ Icon, text, setText, placeholder, invalidText, type, className 
           placeholder={placeholder}
           className={`${className} w-full outline-none py-2 h-full dark:bg-transparent `}
           value={text}
-          type={tp}
+          type={type}
           onFocus={() => setHover(true)}
           onBlur={() => setHover(false)}
           onChange={(e) => setText(e.target.value)}
@@ -54,8 +54,8 @@ const AddPost = ({ t }) => {
   const [fileUrl, setFileUrl] = useState(null);
   const onDrop = useCallback(async (acceptedFiles) => {
     setFileUrl((prev) => ([...(prev || []),
-      ...acceptedFiles.map((prev) => Object.assign(prev, {
-        preview: URL.createObjectURL(prev) }))]));
+      ...acceptedFiles.map((k) => Object.assign(k, {
+        preview: URL.createObjectURL(k) }))]));
   });
 
   useEffect(() => {
@@ -117,7 +117,7 @@ const AddPost = ({ t }) => {
         'Content-Type': 'multipart/form-data',
       },
 
-    }).then((res) => {
+    }).then(() => {
       const userId = user._id;
       socket.emit('newpost', { userId });
       setAction((prev) => ({ ...prev, success: true }));
@@ -217,7 +217,7 @@ const AddPost = ({ t }) => {
             {tags.map(((i) => (
               <div key={i} className="flex flex-row items-center bg-blue-500 px-1 text-white dark:bg-blue-600 transition-all duration-500">
                 <p className="text-sm">{i}</p>
-                <CloseOutlined onClick={() => setTags((prev) => prev.filter((t) => t !== i))} className="text-xs ml-2" />
+                <CloseOutlined onClick={() => setTags((prev) => prev.filter((k) => k !== i))} className="text-xs ml-2" />
               </div>
             )))}
           </div>

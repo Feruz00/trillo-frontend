@@ -4,7 +4,7 @@ import { UserOutlined } from '@ant-design/icons';
 import React, { useCallback } from 'react';
 import { useConversation } from '../context/conversation';
 
-const Avatars = ({ logo, isGroup, isOnline }) => (
+const Avatars = ({ logo, isOnline }) => (
   <div className="flex flex-row w-14 relative">
     {
         logo.map((i, index) => (

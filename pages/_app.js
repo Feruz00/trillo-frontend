@@ -13,7 +13,7 @@ import nprogress from 'nprogress';
 import { useRouter } from 'next/router';
 import App from 'next/app';
 import axios from 'axios';
-import { parseCookies } from 'nookies';
+// import { parseCookies } from 'nookies';
 import { Footer, Navbar } from '../components';
 import '../styles/nprogress.css';
 import { AuthProvider } from '../context/authContext';
@@ -75,11 +75,11 @@ MyApp.getInitialProps = async (appContext) => {
       Cookie: req.headers.cookie,
     },
     withCredentials: true,
-  }).then((res) => {
+  }).then(() => {
     if (noProted) {
       redirectUser(ctx, '/');
     }
-  }).catch((err) => {
+  }).catch(() => {
     // console.log(err?.response?.data);
     if (!noProted) { redirectUser(ctx, '/login'); }
   });

@@ -148,7 +148,7 @@ const PersonalInformationChange = ({ user, setUser, t }) => {
           <div className="flex-1 flex items-center justify-center md:w-full">
             <Input
               text={username.value}
-              setText={(t) => setUsername((prev) => ({ ...prev, value: t }))}
+              setText={(k) => setUsername((prev) => ({ ...prev, value: k }))}
               invalidText={username.invalidText}
               placeholder={t('auth.username')}
               type="text"
@@ -193,7 +193,7 @@ const PersonalInformationChange = ({ user, setUser, t }) => {
             </h2>
             <Input
               text={personal.firstName}
-              setText={(t) => setPersonal((prev) => ({ ...prev, firstName: t }))}
+              setText={(k) => setPersonal((prev) => ({ ...prev, firstName: k }))}
               invalidText={personal.firstNameInvalidText}
               placeholder={t('settings.changeFirstName')}
               type="text"
@@ -205,7 +205,7 @@ const PersonalInformationChange = ({ user, setUser, t }) => {
 
             <Input
               text={personal.lastName}
-              setText={(t) => setPersonal((prev) => ({ ...prev, lastName: t }))}
+              setText={(k) => setPersonal((prev) => ({ ...prev, lastName: k }))}
               invalidText={personal.lastNameInvalidText}
               placeholder={t('settings.changeLastName')}
               type="text"

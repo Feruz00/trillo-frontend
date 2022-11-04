@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-shadow */
 /* eslint-disable no-mixed-operators */
 import { LoadingOutlined, UserOutlined } from '@ant-design/icons';
 import axios from 'axios';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { useSocket } from '../context/socket';
@@ -21,7 +22,7 @@ const UserProfileModal = ({ loading, data, user, error, t, setProfile, profile, 
 
   const unfollow = async (id) => {
     try {
-      const res = await axios.post(`${process.env.SERVER}/friends/unfollow`, { _id: id }, { withCredentials: true });
+      await axios.post(`${process.env.SERVER}/friends/unfollow`, { _id: id }, { withCredentials: true });
       setProfile((prev) => {
         const { following, ...other } = prev;
         return { ...other, following: following.filter((i) => i !== id) };

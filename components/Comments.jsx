@@ -33,13 +33,13 @@ const Comments = ({ t, comments, setAnsUsers, isCommentSelected, commentSelected
                     cursor-pointer
                     "
                       onClick={() => {
-                        commentSelected.filter((t) => t === i._id).length > 0
-                          ? setCommentSelected(((prev) => prev.filter((t) => t !== i._id)))
+                        commentSelected.filter((k) => k === i._id).length > 0
+                          ? setCommentSelected(((prev) => prev.filter((k) => k !== i._id)))
                           : setCommentSelected((prev) => [...prev, i._id]);
                       }}
                     >
                       {
-                        commentSelected.filter((t) => t === i._id).length > 0
+                        commentSelected.filter((k) => k === i._id).length > 0
                           ? <CheckOutlined />
                           : <div className="w-4 h-4 rounded-full bg-white dark:bg-nft-gray-3" />
 
@@ -78,7 +78,7 @@ const Comments = ({ t, comments, setAnsUsers, isCommentSelected, commentSelected
                         i.user._id !== user._id && (
                         <p
                           className="text-sm italic cursor-pointer text-blue-700 dark:text-blue-500 transition-all duration-500 font-medium"
-                          onClick={() => setAnsUsers((prev) => (prev.filter((t) => t?._id === i.user._id).length === 0 ? [...prev, i.user] : prev))}
+                          onClick={() => setAnsUsers((prev) => (prev.filter((k) => k?._id === i.user._id).length === 0 ? [...prev, i.user] : prev))}
                         >
                           {
                             t('home.reply')

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-shadow */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/button-has-type */
@@ -5,7 +6,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-props-no-multi-spaces */
 /* eslint-disable no-unused-expressions */
-import { ArrowLeftOutlined, ArrowRightOutlined, CalendarOutlined, CloseOutlined, CommentOutlined, DeleteOutlined, HeartFilled, HeartOutlined, LoadingOutlined, MessageOutlined, UserOutlined } from '@ant-design/icons';
+import { ArrowLeftOutlined, ArrowRightOutlined, CalendarOutlined, CloseOutlined, CommentOutlined, HeartFilled, HeartOutlined, LoadingOutlined, MessageOutlined, UserOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import Link from 'next/link';
 import Router from 'next/router';
@@ -59,14 +60,14 @@ const Post = ({ isFull, item, isModal, t, isHome, setData }) => {
         withCredentials: true,
       });
       // console.log(result);
-      const ansUser = ansUsers.length === 0 ? [] : ansUsers;
+      // const ansUser = ansUsers.length === 0 ? [] : ansUsers;
       setMyComments(result.data);
       setCommentLoading(false);
       const users = [...ansUsers.map((i) => i._id), item.user._id];
-      console.log(users, ansUsers, item.user);
+      // console.log(users, ansUsers, item.user);
       socket.emit('newnotification', { users });
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setCommentLoading(false);
       setCommentError(true);
     }

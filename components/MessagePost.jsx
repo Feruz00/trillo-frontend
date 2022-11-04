@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Triangle } from 'react-loader-spinner';
 
-const MessagePost = ({ id, t, setOpenPost, setOpenPostId }) => {
+const MessagePost = ({ id, t }) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -21,7 +21,7 @@ const MessagePost = ({ id, t, setOpenPost, setOpenPostId }) => {
         .then((res) => {
           setData(res.data);
         })
-        .catch((err) => {
+        .catch(() => {
           setError(true);
         });
     };

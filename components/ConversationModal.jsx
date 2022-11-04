@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import { CheckOutlined, CloseOutlined, LoadingOutlined, UserOutlined } from '@ant-design/icons';
 import axios from 'axios';
-import Link from 'next/link';
+// import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import { MdErrorOutline } from 'react-icons/md';
 import { AuthContext } from '../context/authContext';
@@ -41,8 +41,8 @@ const ConversationModal = ({ setIsOpenNewConversation, filter, t }) => {
 
       setCurrentConversation(ans);
       setIsOpenNewConversation(false);
-    }).catch((err) => {
-      if (err.response) alert(err.response.data.message);
+    }).catch((error) => {
+      if (error.response) alert(error.response.data.message);
       else alert('Something wrong went! Try again!');
     });
   }
@@ -51,14 +51,14 @@ const ConversationModal = ({ setIsOpenNewConversation, filter, t }) => {
     const { recipients, ...other } = currentConversation;
     const nw = [...recipients, user];
     const ns = { recipients: nw.map((i) => i._id), ...other };
-    socket.emit('add_user', { add: users, currentConversation: ns }, ({ err, data }) => {
-      if (err) {
+    socket.emit('add_user', { add: users, currentConversation: ns }, (k) => {
+      if (k.err) {
         alert('Sorry something wrong went');
       } else {
         setConversations((prev) => prev.map((i) => {
           if (i._id !== currentConversation._id) return i;
 
-          return data;
+          return k.data;
         }));
       }
     });
@@ -89,9 +89,13 @@ const ConversationModal = ({ setIsOpenNewConversation, filter, t }) => {
           cancel = canceler;
         }),
       });
-      const { data } = res;
-      setData(data.filter((i) => filter.filter((j) => j === i._id).length === 0));
-      setData((prev) => prev.map((i) => ({ username: i.username, logo: i.logo, firstName: i.firstName, lastName: i.lastName, _id: i._id })));
+      // const { data } = res;
+      setData(res.data.filter((i) => filter.filter((j) => j === i._id).length === 0));
+      setData((prev) => prev.map((i) => ({ username: i.username,
+        logo: i.logo,
+        firstName: i.firstName,
+        lastName: i.lastName,
+        _id: i._id })));
     } catch (error) {
       if (error.response) setErr(error.response.data.message);
       else setErr('Network error');
