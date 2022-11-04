@@ -1,0 +1,149 @@
+{
+    "Welcome": "Hosh geldiniz",
+    "page":{
+        "home": "Baş sahypa",
+        "post": "Post",
+        "loadingPage": "Taýýarlanýar",
+        "settings": "Sazlamalar",
+        "inbox": "Gelen habarlar",
+        "notifications": "Bellikler",
+        "newPost": "Täze Post",
+        "account": "Profil"
+    },
+    "newPost":{
+        "createPost": "Täze post dörediň",
+        "success": "Täze post üstünlikli goşuldy",
+        "addLocation": "Salgyny goşuň",
+        "browse": "Suratlary we wideolary saýlaň",
+        "selected": "Saýlandy",
+        "files": "faýllar",
+        "clearList": "Sanawy arassala",
+        "addTags": "Tegleri goş",
+        "enterLocation": "Salgyny giriziň",
+        "space":"Tegleri boşluk bilen ýazyň",
+        "addTag": "Teg goşuň",
+        "addDescription": "Düşündiriş goş",
+        "enterDescription": "Düşündiriş giriziň",
+        "submit": "Täze post döret",
+        "locationErr": "Salgyny giriziň"
+        
+    },
+    "notifications":{
+        "noNotifications": "Sizde bildiriş ýok",
+        "addedNewComment": "Täze teswir goşuldy",
+        "answerComment": "Teswiriňize jogap",    
+        "like": "Halady. ",
+        "thisPost": "şu postda",
+        "followed": "Siziň yzarlaýjyňyz"
+    },
+    "home": {
+        "noPost": "Hiç zat tapylmady",
+        "anything": "Nädogry bir zat boldy!",
+        "tryAgain": "Gaýtadan synanyşyň!",
+        "likes": "halanlar bar",
+        "goPost": "Posty aýratyn aç",
+        "answered": "Jogap berýän",
+        "hasLikes": "Halanlar",
+        "noComment": "Bu postda kommentariýa ýok",
+        "reply":"Jogap ber",
+        "posted": "Neşir edildi",
+        "writeComment": "Teswir ýaz",
+        "addComment":"Teswir goş"
+    },
+    "direct":{
+        "selectNewConersation":"Täze Söhbeti saýlaň",
+        "noChat":"Gepleşigiňiz ýok!",
+        "searchUsers":"Ulanyjylary gözläň",
+        "notFound": "Hiç zat tapylmady",
+        "modalTitle": "Ulanyjylary saýlaň we habarlaşmaga başlaň",
+        "addUserGroup":"Topara ulanyjy goşuň",
+        "changeGroupName": "Toparyň adyny üýtgediň",
+        "groupName": "Toparyň ady",
+        "user": "Ulanyjy",
+        "users": "Ulanyjylar",
+        "deleteChat": "Söhbeti poz",
+        "leaveGroup": "Topary terk et",
+        "clearAdminList":"Admin sanawyndan çykar",
+        "addAdminList":"Admin sanawyna goş",
+        "deleteUser": "Ulanyjyny poz",
+        "smallTyping": "ýazýar",
+        "typing": "Ýazýar",
+        "writeMessage": "Habar ýaz",
+        "startMessaging":"Habarlaşmaga başla",
+        "image": "Surat",
+        "video": "Wideo",
+        "file": "faýl",
+        "sended":"ugradyldy",
+        "today": "Şu gün",
+        "Yesterday": "Düýn",
+        "post": "Post paýlaşdy"
+    },
+    "share":{
+        "share": "Post paýlaş",
+        "noPost": "Post ýok edilen"
+    },
+    "settings":{
+        "personal": "Şahsy maglumatlar",
+        "change": "Üýtget",
+        "success": "Üstünlikli üýtgedildi",
+        
+        "changeInfo": "Adyňyzy üýtgediň",
+        "changeUsername": "Ulanyjy adyny üýtgediň",
+        "changeFirstName": "Adyny giriz",
+        "changeLastName": "Familisiýasyny giriz",
+        "oldPassword": "Köne parol",
+        "newPassword": "Täze parol",
+        "changePassword": "Paroly üýtget",
+        "uploadPassword": "Surat ýüklemek",
+        "upload": "Ýüklemek",
+        "drag":"Faýl getiriň we oklaň",
+        
+        "uploadPhotoError": "Suraty saýlaň",
+        "browse":"ýa-da enjamyňyzdaky mediýa göz aýlaň",
+        "changeAboutYou": "Siz hakda maglumatlary üýtgediň",
+        "delete": "Öçür",
+        "deleteAccount": "Hasaby öçürmek"
+    },
+    "profile":{
+        "followers": "Yzarlaýjylar",
+        "followings": "Yzarlamalar",
+        "blocking": "Blok edilen ulanyjylar",
+        "follow": "Yzarla",
+        "unfollow": "Yzarlama",
+        "block": "Blok",
+        
+        "unblock": "Blockdan açmak"
+    },
+    "auth":{
+        "username": "Ulanyjynyň adyny giriziň",
+        "email": "Ulanyjynyň email giriziň",
+        "password": "Ulanyjynyň parolyny giriziň",
+        "confrimPassword": "Paroly tassykla",
+        "headerLogin": "Ulgama gir",
+        "headerRegister": "Hasaba dur",
+        
+        "usernameOrEmail": "Ulanyjynyň adyny ýa-da elektron poçta adressini giriz",
+        "google": "Google bilen dowam et",
+        "github": "Github bilen dowam et",
+        "register": "Hasaba dur",
+        "forgot": "Paroly ýatdan çykardynmy?",
+        "login": "Ulgama gir",
+        "nameLengthError": "Ulanyjynyň adynyň uzunlygy 5 harp ýa-da ondan köp bolmaly",
+        "passwordLengthError": "Parolyň uzunlygy 8 harp ýa-da ondan köp bolmaly",
+        "passwordContainError":"Parol harplardan, sifrlerden we başga simwollardan ybarat bolmaly",
+        "emailContainError": "Ýalňyş elektron poçta adressi",
+        "passwordCannotMatch": "Parollar gabat gelenok",
+        "success":"Üstünlik bilen hasaba alyndy! E-poçtaňyzy barlaň, e-poçtaňyzy tassyklaýan adressi ugratdyk",
+        "verify": "Ulanyjyny tassyklamak",
+        "successVerify": "Üstünlikli tassyklanyldy",
+        "submit":"Ugrat",
+        
+        "reset": "Paroly täzeden düzmek",
+        "forgotSuccess":"E-poçtaňyzy paroly täzeden dikeltmek üçin baglanyşyk iberdik.",
+        
+        "resetSuccess": "Paroly täzeden düzmek üstünlikli geçdi"
+    },
+    "footer":{
+        "all_rigths":"Ähli hukuklary goralan"
+    }
+}
