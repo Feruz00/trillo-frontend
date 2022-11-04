@@ -7,7 +7,8 @@ const nextConfig = {
   // swcMinify: true,
   i18n,
   env: {
-    SERVER: 'http://localhost:3001/api/v1',
+    SERVER: 'https://trillo-backend.vercel.app/api/v1',
+    // 'http://localhost:3001/api/v1',
   },
 };
 
